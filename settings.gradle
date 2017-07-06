@@ -1,0 +1,3 @@
+rootProject.name = 'infras'
+include 'model', 'services', 'api', 'admin', 'common'
+

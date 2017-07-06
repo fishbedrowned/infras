@@ -1,0 +1,22 @@
+# 语法说明[http://www.jianshu.com/p/ea6341224e89]
+
+# build
+build/
+*.class
+.gradle/
+# ide
+.settings/
+.project
+.classpath
+.idea/
+*.iml
+# logs
+logs/
+# frontend
+**/node_modules/
+**/oneapm/
+admin/npm-debug.log
+admin/src/main/resources/static
+admin/src/main/resources/templates
+# development
+application-local.properties
