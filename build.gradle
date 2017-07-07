@@ -1,11 +1,14 @@
 buildscript {
 	ext {
+		druidVersion = '1.0.29'
 		springBootVersion = '1.5.4.RELEASE'
-		baseVersion = '1.4.0'
+		baseVersion = '0.0.1'
 		gradleVersion = '2.14.1'
 		javaVersion = '1.8'
+		mybatisVersion = '1.3.0'
 	}
 	repositories {
+        jcenter()
 		mavenCentral()
 	}
 	dependencies {
@@ -19,30 +22,19 @@ buildscript {
 	}
 }
 
-apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
-
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
-
-repositories {
-	mavenCentral()
-}
-
 allprojects {
-	repositories {
-		mavenCentral()
-	}
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
 }
-
 
 subprojects {
 	apply plugin: 'java'
 	apply plugin: 'idea'
 	apply plugin: 'spring-boot'
 
-	group = 'com.xingren.service'
+	group = 'com.infras.service'
 	version = baseVersion
 
 	sourceCompatibility = javaVersion

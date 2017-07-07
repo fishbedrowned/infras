@@ -8,6 +8,6 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class Greeting {
-    private final long id;
+    private final Integer id;
     private final String name;
 }

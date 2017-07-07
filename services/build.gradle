@@ -1,3 +1,10 @@
+bootRepackage.enabled = false
+
+jar {
+    baseName = 'services'
+    version = baseVersion
+}
+
 buildscript {
     ext {
         springBootVersion = '1.5.4.RELEASE'
