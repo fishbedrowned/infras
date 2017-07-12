@@ -22,3 +22,7 @@
 ### 关于配置文件
 
 - api/admin增加了application-local.properties文件，不会被提交，本地使用在项目启动里面设置active profiles为local
+
+### TODO事项
+
+- 优化log的打印
