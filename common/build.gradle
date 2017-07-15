@@ -10,5 +10,8 @@ repositories {
 }
 
 dependencies {
+    compile("org.projectlombok:lombok")
+    compile("org.apache.commons:commons-lang3:${commonLangVersion}")
+    compile("javax.validation:validation-api:${validationVersion}")
     compile('org.springframework.boot:spring-boot-starter-logging')
 }

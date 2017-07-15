@@ -9,5 +9,6 @@ jar {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile project(':services')
+    compile('org.springframework.boot:spring-boot-starter-web')
 }

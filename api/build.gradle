@@ -23,5 +23,7 @@ repositories {
 
 dependencies {
     compile project(':services')
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310')
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-jdk8')
     compile('org.springframework.boot:spring-boot-starter-web')
 }

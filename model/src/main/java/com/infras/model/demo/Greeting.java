@@ -1,13 +1,21 @@
 package com.infras.model.demo;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.*;
+
+import java.time.OffsetDateTime;
+import java.util.Optional;
+
 /**
  * Created by zhaoheng on 2017/7/6.
  */
-@Getter
+@Data
+@Builder
+@NoArgsConstructor
 @AllArgsConstructor
 public class Greeting {
-    private final Integer id;
-    private final String name;
+    private Integer id;
+    private String name;
+    private Integer age;
+    private OffsetDateTime created;
+    private OffsetDateTime updated;
 }

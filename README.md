@@ -26,3 +26,22 @@
 ### TODO事项
 
 - 优化log的打印
+
+### 异常处理
+
+- api中的业务异常抛出ServiceException、在GlobalController中统一处理
+- 重复使用的错误信息、应该定义到ApiErrors中
+
+### 返回值格式化
+
+- 错误
+
+```
+{"success":false,"errCode":20,"errMessage":"demo的业务数据不对！"}
+```
+
+- 正确
+
+```
+{"success":false,"data":"业务数据格式"}
+```

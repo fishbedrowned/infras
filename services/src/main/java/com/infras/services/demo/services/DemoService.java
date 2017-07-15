@@ -1,6 +1,8 @@
-package com.infras.services.demo;
+package com.infras.services.demo.services;
 
 
+import com.infras.common.error.ApiErrors;
+import com.infras.common.error.ServiceException;
 import com.infras.model.demo.Greeting;
 import com.infras.model.mapper.GreetingMapper;
 import org.slf4j.Logger;
@@ -19,10 +21,14 @@ public class DemoService {
 
     private final static Logger logger = LoggerFactory.getLogger(DemoService.class);
 
-    public Greeting test(){
-        mapper.insert(new Greeting(1111, "zhaoheng"));
-        logger.info("测试下Info信息");
-        logger.error("测试下错误信息");
-        return mapper.getGreetings(1111);
+    public Greeting findGreeting(Integer id){
+        if(id < 1){
+            throw new ServiceException(ApiErrors.DEMO_TEST);
+        }
+        return mapper.getGreetings(1);
+    }
+
+    public int insertGreeting(Greeting g){
+        return mapper.insert(g);
     }
 }
