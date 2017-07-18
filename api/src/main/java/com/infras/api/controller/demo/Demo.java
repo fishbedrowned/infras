@@ -26,6 +26,7 @@ public class Demo implements ApiPath{
     @Autowired
     DemoTransfer transfer;
 
+    @CrossOrigin
     @RequestMapping(value = DEMO_GET_TEST, method = RequestMethod.GET)
     public JsonResult<Greeting> getGreet(@PathVariable Integer id){
         Greeting g = demoService.findGreeting(id);
