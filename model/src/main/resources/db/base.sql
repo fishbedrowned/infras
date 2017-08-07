@@ -1,5 +1,5 @@
 
-create database infras;
+create database infras DEFAULT CHARSET=utf8mb4;
 
 -- Demo表
 -- 注意创建表的几个要点：
@@ -10,6 +10,6 @@ create database infras;
 -- 5. 字符格式默认utf8mb4
 CREATE TABLE `Greeting` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) CHARACTER SET utf8 NOT NULL COMMENT '姓名',
+  `name` varchar(50) CHARACTER SET utf8mb4 NOT NULL COMMENT '姓名',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='会议测试';

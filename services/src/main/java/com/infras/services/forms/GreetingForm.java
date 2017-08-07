@@ -1,4 +1,4 @@
-package com.infras.services.demo.forms;
+package com.infras.services.forms;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

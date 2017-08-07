@@ -1,11 +1,11 @@
 package com.infras.api.controller.demo;
 
 import com.infras.api.ApiPath;
-import com.infras.api.transfer.demo.DemoTransfer;
+import com.infras.api.transfer.DemoTransfer;
 import com.infras.common.result.JsonResult;
 import com.infras.model.demo.Greeting;
-import com.infras.services.demo.forms.GreetingForm;
-import com.infras.services.demo.services.DemoService;
+import com.infras.services.forms.GreetingForm;
+import com.infras.services.services.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

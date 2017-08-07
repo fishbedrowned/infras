@@ -5,6 +5,10 @@ package com.infras.api;
  */
 public interface ApiPath {
 
+    // Demo URL
     String DEMO_GET_TEST = "test/{id}";
     String DEMO_TEST = "test";
+
+    // 登录
+    String LOGIN = "login";
 }

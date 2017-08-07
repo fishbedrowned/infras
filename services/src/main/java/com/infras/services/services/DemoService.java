@@ -1,10 +1,10 @@
-package com.infras.services.demo.services;
+package com.infras.services.services;
 
 
 import com.infras.common.error.ApiErrors;
 import com.infras.common.error.ServiceException;
 import com.infras.model.demo.Greeting;
-import com.infras.model.mapper.GreetingMapper;
+import com.infras.model.mappers.GreetingMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 public class DemoService {
 
     @Autowired
-    GreetingMapper mapper;
+    private GreetingMapper mapper;
 
     private final static Logger logger = LoggerFactory.getLogger(DemoService.class);
 

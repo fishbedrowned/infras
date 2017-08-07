@@ -1,4 +1,4 @@
-package com.infras.model.mapper;
+package com.infras.model.mappers;
 
 import com.infras.model.demo.Greeting;
 import org.apache.ibatis.annotations.*;
