@@ -17,3 +17,16 @@ CREATE TABLE `Login` (
   UNIQUE KEY `unqPhone` (`phone`),
   UNIQUE KEY `unqEmail` (`email`(32))
 ) ENGINE=InnoDB CHARSET=utf8mb4;
+
+-- Session 处理
+
+CREATE TABLE `LoginSessionKey` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `loginId` int(11) NOT NULL,
+  `deviceId` varchar(100) NOT NULL DEFAULT '',
+  `sessionKey` varchar(100) NOT NULL DEFAULT '',
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UnqDoctorDevice` (`doctorId`,`deviceId`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=ascii;

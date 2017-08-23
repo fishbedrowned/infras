@@ -1,7 +1,7 @@
 package com.infras.api.transfer;
 
 import com.infras.model.demo.Greeting;
-import com.infras.services.forms.GreetingForm;
+import com.infras.services.demo.GreetingForm;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 
