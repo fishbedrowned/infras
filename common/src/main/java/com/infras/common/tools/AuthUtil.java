@@ -67,9 +67,9 @@ public class AuthUtil {
     }
 
     public static void main(String[] args) {
-        System.out.println(OffsetTime.now().getNano());
-        Optional<String> p =  generateToken("123456");
-        System.out.println(OffsetTime.now().getNano());
-        p.ifPresent(t -> System.out.print(t+"   "+t.length()));
+//        System.out.println(OffsetTime.now().getNano());
+//        Optional<String> p =  generateToken("123456");
+//        System.out.println(OffsetTime.now().getNano());
+//        p.ifPresent(t -> System.out.print(t+"   "+t.length()));
     }
 }

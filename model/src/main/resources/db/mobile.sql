@@ -20,13 +20,13 @@ CREATE TABLE `Login` (
 
 -- Session 处理
 
-CREATE TABLE `LoginSessionKey` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `loginId` int(11) NOT NULL,
-  `deviceId` varchar(100) NOT NULL DEFAULT '',
-  `sessionKey` varchar(100) NOT NULL DEFAULT '',
-  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+CREATE TABLE `PhoneCode` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `phone` varchar(20) NOT NULL COMMENT '手机号码。',
+  `code` varchar(10) NOT NULL COMMENT '验证码。',
+  `isRetry` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否重新获取',
+  `triedTimes` int(1) NOT NULL DEFAULT '0' COMMENT '验证码尝试次数',
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间。',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `UnqDoctorDevice` (`doctorId`,`deviceId`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=ascii;
+  UNIQUE KEY `unqPhone` (`phone`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='手机验证码。';

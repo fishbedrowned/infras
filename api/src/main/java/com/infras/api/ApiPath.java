@@ -9,6 +9,9 @@ public interface ApiPath {
     String DEMO_GET_TEST = "test/{id}";
     String DEMO_TEST = "test";
 
-    // 登录
+    // 登录、注册
     String LOGIN = "login";
+    String REGISTER = "register";
+    String PHONE_CODE = "phone/code";
+
 }

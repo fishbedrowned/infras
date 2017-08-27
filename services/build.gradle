@@ -25,5 +25,6 @@ dependencies {
     compile project(':model')
     compile project(':common')
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.mindrot:jbcrypt:0.4')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }

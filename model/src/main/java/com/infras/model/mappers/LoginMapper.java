@@ -5,14 +5,8 @@ import com.infras.model.enums.Status;
 import com.infras.model.projos.Login;
 import java.time.OffsetDateTime;
 import java.util.Date;
-import org.apache.ibatis.annotations.Arg;
-import org.apache.ibatis.annotations.ConstructorArgs;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.InsertProvider;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
-import org.apache.ibatis.annotations.UpdateProvider;
+
+import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.EnumOrdinalTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 
@@ -35,9 +29,11 @@ public interface LoginMapper {
         "#{birth,jdbcType=TIMESTAMP}, #{status,jdbcType=TINYINT,typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler}, ",
         "#{updated,jdbcType=TIMESTAMP}, #{created,jdbcType=TIMESTAMP})"
     })
+    @Options(useGeneratedKeys = true)
     int insert(Login record);
 
     @InsertProvider(type=LoginSqlProvider.class, method="insertSelective")
+    @Options(useGeneratedKeys = true)
     int insertSelective(Login record);
 
     @Select({
@@ -61,6 +57,22 @@ public interface LoginMapper {
         @Arg(column="created", javaType=OffsetDateTime.class, jdbcType=JdbcType.TIMESTAMP)
     })
     Login selectByPrimaryKey(Integer id);
+
+    @Select("select * from Login where phone = #{phone}")
+    @ConstructorArgs({
+        @Arg(column="id", javaType=Integer.class, jdbcType=JdbcType.INTEGER, id=true),
+        @Arg(column="password", javaType=String.class, jdbcType=JdbcType.VARCHAR),
+        @Arg(column="phone", javaType=String.class, jdbcType=JdbcType.VARCHAR),
+        @Arg(column="email", javaType=String.class, jdbcType=JdbcType.VARCHAR),
+        @Arg(column="name", javaType=String.class, jdbcType=JdbcType.VARCHAR),
+        @Arg(column="thumbnail", javaType=String.class, jdbcType=JdbcType.VARCHAR),
+        @Arg(column="gender", javaType=Gender.class, typeHandler=EnumOrdinalTypeHandler.class, jdbcType=JdbcType.TINYINT),
+        @Arg(column="birth", javaType=OffsetDateTime.class, jdbcType=JdbcType.TIMESTAMP),
+        @Arg(column="status", javaType=Status.class, typeHandler=EnumOrdinalTypeHandler.class, jdbcType=JdbcType.TINYINT),
+        @Arg(column="updated", javaType=OffsetDateTime.class, jdbcType=JdbcType.TIMESTAMP),
+        @Arg(column="created", javaType=OffsetDateTime.class, jdbcType=JdbcType.TIMESTAMP)
+    })
+    Login selectByPhone(String phone);
 
     @UpdateProvider(type=LoginSqlProvider.class, method="updateByPrimaryKeySelective")
     int updateByPrimaryKeySelective(Login record);

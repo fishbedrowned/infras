@@ -7,7 +7,6 @@ import lombok.Builder;
 import lombok.Getter;
 
 import java.time.OffsetDateTime;
-import java.util.Date;
 
 @Getter
 @AllArgsConstructor
@@ -27,7 +26,7 @@ public class Login {
 
     private Gender gender;
 
-    private Date birth;
+    private OffsetDateTime birth;
 
     private Status status;
 
