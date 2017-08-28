@@ -5,5 +5,5 @@ package com.infras.admin;
  */
 public interface AdminPath {
 
-    final static String LOGIN = "login";
+    String LOGIN = "/";
 }

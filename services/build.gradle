@@ -26,5 +26,9 @@ dependencies {
     compile project(':common')
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.mindrot:jbcrypt:0.4')
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310')
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-jdk8')
+    compile('commons-beanutils:commons-beanutils:1.8.3')
+    compile('com.google.guava:guava:19.0')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }

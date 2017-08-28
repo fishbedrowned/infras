@@ -154,7 +154,7 @@ public class JsonResult<T> {
     }
 
     public int hashCode() {
-//        int PRIME = true;
+//        int PRIME = true;`
         int result = 1;
         result = result * 59 + (this.isSuccess()?79:97);
         Object $data = this.getData();

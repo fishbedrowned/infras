@@ -51,7 +51,7 @@ public interface LoginMapper {
         @Arg(column="name", javaType=String.class, jdbcType=JdbcType.VARCHAR),
         @Arg(column="thumbnail", javaType=String.class, jdbcType=JdbcType.VARCHAR),
         @Arg(column="gender", javaType=Gender.class, typeHandler=EnumOrdinalTypeHandler.class, jdbcType=JdbcType.TINYINT),
-        @Arg(column="birth", javaType=Date.class, jdbcType=JdbcType.TIMESTAMP),
+        @Arg(column="birth", javaType=OffsetDateTime.class, jdbcType=JdbcType.TIMESTAMP),
         @Arg(column="status", javaType=Status.class, typeHandler=EnumOrdinalTypeHandler.class, jdbcType=JdbcType.TINYINT),
         @Arg(column="updated", javaType=OffsetDateTime.class, jdbcType=JdbcType.TIMESTAMP),
         @Arg(column="created", javaType=OffsetDateTime.class, jdbcType=JdbcType.TIMESTAMP)
