@@ -9,6 +9,7 @@ buildscript {
 		validationVersion = '1.1.0.Final'
 		commonLangVersion = '3.6'
 		springLoaded = '1.2.6.RELEASE'
+		springfoxVersion = '2.6.0'
 	}
 	repositories {
         jcenter()

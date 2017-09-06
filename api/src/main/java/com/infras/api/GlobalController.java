@@ -62,7 +62,7 @@ public class GlobalController {
             return JsonResult.error(code, errorMsg);
         }else{
             // 其他异常都返回「服务器异常」错误
-            log.error(error.getMessage());
+            log.error("Exception occurred:" + error.getMessage() + ". [URL=" + request.getRequestURI() + "]", error);
             return JsonResult.error(SERVER_ERROR);
         }
     }

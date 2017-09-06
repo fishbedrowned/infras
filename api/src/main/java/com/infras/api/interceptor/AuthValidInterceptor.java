@@ -3,6 +3,7 @@ package com.infras.api.interceptor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.infras.common.result.JsonResult;
 import com.infras.common.tools.AuthUtil;
+import com.infras.common.tools.Utils;
 import com.infras.model.projos.Login;
 import com.infras.services.login.services.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import tk.mybatis.mapper.util.StringUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.constraints.Null;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -53,22 +55,41 @@ public class AuthValidInterceptor extends HandlerInterceptorAdapter {
         return true;
     }
 
+    private Optional<Long> _getLoginId(HttpServletRequest request) {
+        String hLoginId = request.getHeader("loginId");
+        Object urlLoginId = request.getAttribute("loginId");
+        if(StringUtil.isNotEmpty(hLoginId) && Utils.isNumber(hLoginId)) return Optional.of(Long.parseLong(hLoginId));
+        else if(urlLoginId != null && Utils.isNumber(hLoginId)) return Optional.of(Long.parseLong(urlLoginId.toString()));
+        return Optional.empty();
+    }
+
+    private String _getToken(HttpServletRequest request) {
+        String hToken = request.getHeader("token");
+        Object urlToken = request.getAttribute("token");
+        if(StringUtil.isNotEmpty(hToken)) return hToken;
+        else if(urlToken != null) return urlToken.toString();
+        return "";
+    }
+
     public boolean _isValidRequest(HttpServletRequest request, HttpServletResponse response) {
         // 1. 获取token、loginId token=yyMMddHH+加密串
-        String token = request.getHeader("token");
-        String strLoginId = request.getHeader("loginId");
-        Object sessionLoginId = request.getSession().getAttribute("loginId").toString();
+        String token = _getToken(request);
+        Optional<Long> reqLoginId = _getLoginId(request);
+        Object sessionLoginId = request.getSession().getAttribute("loginId");
         Long loginId = -1L;
 
-        if(StringUtil.isEmpty(token) || StringUtil.isEmpty(strLoginId)){
-            if(sessionLoginId != null){
+        if(StringUtil.isEmpty(token) || !reqLoginId.isPresent()){
+            if(sessionLoginId != null && Utils.isNumber(sessionLoginId.toString())){
                 loginId = Long.parseLong(sessionLoginId.toString());
             } else {
                 return false;
             }
+        } else if(StringUtil.isNotEmpty(token)){
+            loginId = reqLoginId.get();
         } else {
-            loginId = Long.parseLong(request.getHeader("loginId"));
+            return false;
         }
+
 
         if(loginId < 1) return false;
 

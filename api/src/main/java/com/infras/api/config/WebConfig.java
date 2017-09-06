@@ -21,6 +21,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(authValidInterceptor).addPathPatterns("/**").excludePathPatterns("/login", "/register", "/phone/code");
+        registry.addInterceptor(authValidInterceptor)
+            .addPathPatterns("/**")
+            .excludePathPatterns("/login", "/register", "/phone/code", "/swagger-resources/**", "/v2/api-docs");
     }
 }

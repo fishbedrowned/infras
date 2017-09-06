@@ -3,6 +3,7 @@ package com.infras.services.login.forms;
 import com.infras.common.error.ApiErrors;
 import com.infras.common.error.ServiceException;
 import com.infras.common.tools.PhoneUtil;
+import io.swagger.annotations.ApiParam;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 
@@ -12,8 +13,10 @@ import org.apache.commons.lang3.StringUtils;
 @Data
 public class LoginForm {
 
+    @ApiParam(value = "密码")
     private String password;
 
+    @ApiParam(value = "电话")
     private String phone;
 
     public void validate(){

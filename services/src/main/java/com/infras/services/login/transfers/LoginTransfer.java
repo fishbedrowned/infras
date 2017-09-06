@@ -19,7 +19,8 @@ public class LoginTransfer {
         LoginVO loginVO = new LoginVO();
         BeanUtils.copyProperties(login, loginVO);
         loginVO.setToken(token);
-        loginId.ifPresent(id -> loginVO.setLoginId(id) );
+        Integer id = loginId.orElse(login.getId());
+        loginVO.setLoginId(id);
         return loginVO;
     }
 

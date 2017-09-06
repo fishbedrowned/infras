@@ -38,12 +38,12 @@ public class PhoneUtil {
 
     public static void main(String[] args){
 
-        Predicate<String> predicate = (phone) -> {
-            String regex = String.format("^(%s)\\d{8}$$", "134 | 135");
-            return Pattern.matches(regex, phone);
-        };
-        predicate.test("18984737383");
-        predicate.negate().test("18984737383");
+//        Predicate<String> predicate = (phone) -> {
+//            String regex = String.format("^(%s)\\d{8}$$", "134 | 135");
+//            return Pattern.matches(regex, phone);
+//        };
+//        predicate.test("18984737383");
+//        predicate.negate().test("18984737383");
         System.out.println("result = " + new PhoneUtil().validPhone("18984737383"));
     }
 }
