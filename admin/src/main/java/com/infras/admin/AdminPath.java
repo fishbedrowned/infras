@@ -5,5 +5,11 @@ package com.infras.admin;
  */
 public interface AdminPath {
 
-    String LOGIN = "/";
+    String INDEX = "/";
+
+    String LOGIN = "login";
+
+    String LOGOUT = "logout";
+
+
 }

@@ -4,20 +4,18 @@ import com.infras.admin.AdminPath;
 import com.infras.model.mappers.LoginMapper;
 import com.infras.model.projos.Login;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Created by zhaoheng on 2017/7/12.
  */
-@RestController
-public class AdminDemo implements AdminPath {
+@Controller
+public class IndexController implements AdminPath {
 
-    @Autowired
-    LoginMapper loginMapper;
-
-    @RequestMapping(path = LOGIN)
-    public Login login(){
-        return loginMapper.selectByPrimaryKey(7);
+    @RequestMapping(path = INDEX)
+    public String index(){
+        return "index";
     }
 }

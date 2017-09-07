@@ -10,8 +10,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
-import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_ABSENT;
-
 /**
  * Created by zhaoheng on 2017/8/27.
  */
