@@ -33,6 +33,10 @@
 - api中的业务异常抛出ServiceException、在GlobalController中统一处理
 - 重复使用的错误信息、应该定义到ApiErrors中
 
+### Swagger文档
+
+- [Swagger文档](http://localhost:3999/swagger-ui.html)
+
 ### 返回值格式化
 
 - 错误
