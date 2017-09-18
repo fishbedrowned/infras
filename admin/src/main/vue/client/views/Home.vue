@@ -1,17 +1,16 @@
 <template>
   <div class="content has-text-centered">
     <p>
-      <img width="200" src="~assets/logo.svg" :alt="description">
+      <img width="200" src="~assets/logo1.svg" :alt="description">
     </p>
 
     <h1 class="is-title is-bold">{{ name.replace('-', ' ') }}</h1>
 
     <p>
       <strong>{{ description }}</strong>,
-      <a :href="homepage">Live Demo</a>
+      <a :href="homepage">Infras</a>
     </p>
 
-    <p>Supports Vue 2.0 and Bulma 0.3!</p>
   </div>
 </template>
 
@@ -25,6 +24,8 @@ export default {
 }
 </script>
 
+<!-- 加了scoped，style中的样式只适用于当前文件-->
+<!-- capitalize -->
 <style lang="scss" scoped>
 .is-title {
   text-transform: capitalize;

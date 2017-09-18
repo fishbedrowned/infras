@@ -8,7 +8,6 @@ export default {
     label: 'Components'
   },
   component: lazyLoading('components', true),
-
   children: [
     {
       name: 'Components',

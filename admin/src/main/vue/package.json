@@ -1,10 +1,9 @@
 {
-  "name": "vue",
+  "name": "trust",
   "version": "0.1.12",
-  "description": "Vue Admin Panel Framework",
+  "description": "Sparks of fire",
   "repository": "vue-bulma/vue-admin",
-  "homepage": "https://admin.vuebulma.com",
-  "license": "MIT",
+  "homepage": "https://github.com/fishbedrowned/infras",
   "author": {
     "name": "Fangdun Cai",
     "email": "cfddream@gmail.com",
