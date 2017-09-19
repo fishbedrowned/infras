@@ -1,13 +1,12 @@
 package com.infras.model.projos;
 
+import com.infras.model.enums.AdminStatus;
 import com.infras.model.enums.Gender;
-import com.infras.model.enums.Status;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
 import java.time.OffsetDateTime;
-import java.util.Date;
 
 @Getter
 @AllArgsConstructor
@@ -29,7 +28,7 @@ public class AdminLogin {
 
     private OffsetDateTime birth;
 
-    private Status status;
+    private AdminStatus status;
 
     private OffsetDateTime updated;
 

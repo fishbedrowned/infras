@@ -129,7 +129,7 @@
                enableDeleteByExample="false"
                enableSelectByExample="false"
                enableUpdateByExample="false">
-            <columnOverride column="STATUS" javaType="com.infras.model.enums.Status" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
+            <columnOverride column="STATUS" javaType="com.infras.model.enums.AdminStatus" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
             <columnOverride column="GENDER" javaType="com.infras.model.enums.Gender" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
             <columnOverride column="CREATED" javaType="java.time.OffsetDateTime"/>
             <columnOverride column="UPDATED" javaType="java.time.OffsetDateTime"/>

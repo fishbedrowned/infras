@@ -7,9 +7,9 @@
       <div class="box">
         <div v-show="error" style="color:red; word-wrap:break-word;">{{ error }}</div>
         <form v-on:submit.prevent="login">
-          <label class="label">Email</label>
+          <label class="label">Phone</label>
           <p class="control">
-            <input v-model="data.body.name" class="input" type="text" placeholder="email@example.org">
+            <input v-model="data.body.name" class="input" type="text" placeholder="your phone">
           </p>
           <label class="label">Password</label>
           <p class="control">
@@ -68,7 +68,7 @@ export default {
         redirect: {name: redirect ? redirect.from.name : 'Home'},
         success (res) {
           console.log('Auth Success')
-          // console.log('Token: ' + this.$auth.token())
+          console.log('Token: ' + this.$auth.request(req, 'ffefefe'))
           // console.log(res)
         },
         error (err) {

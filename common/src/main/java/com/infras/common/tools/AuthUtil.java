@@ -20,6 +20,13 @@ public class AuthUtil {
     private static final int INTERATIONS = 1024;
     private static final int LEN = 256;
 
+    public static Optional<String> generateAdminToken(String raw){
+        // TODO 应该写到数据库中、保密
+        final String AUTH_METHOD = "HmacSHA1";
+        final String SECRET = "Eish2Thing5phe5uaQuualaixasdfegegeg";
+        return _generateShSecret(raw, AUTH_METHOD, SECRET);
+    }
+
     public static Optional<String> generateToken(String raw){
         // TODO 应该写到数据库中、保密
         final String AUTH_METHOD = "HmacSHA1";

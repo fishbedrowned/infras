@@ -1,20 +1,13 @@
 package com.infras.model.mappers;
 
+import com.infras.model.enums.AdminStatus;
 import com.infras.model.enums.Gender;
-import com.infras.model.enums.Status;
 import com.infras.model.projos.AdminLogin;
-import java.time.OffsetDateTime;
-import java.util.Date;
-import org.apache.ibatis.annotations.Arg;
-import org.apache.ibatis.annotations.ConstructorArgs;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.InsertProvider;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
-import org.apache.ibatis.annotations.UpdateProvider;
+import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.EnumOrdinalTypeHandler;
 import org.apache.ibatis.type.JdbcType;
+
+import java.time.OffsetDateTime;
 
 public interface AdminLoginMapper {
     @Delete({
@@ -56,11 +49,45 @@ public interface AdminLoginMapper {
         @Arg(column="thumbnail", javaType=String.class, jdbcType=JdbcType.VARCHAR),
         @Arg(column="gender", javaType=Gender.class, typeHandler=EnumOrdinalTypeHandler.class, jdbcType=JdbcType.TINYINT),
         @Arg(column="birth", javaType=OffsetDateTime.class, jdbcType=JdbcType.TIMESTAMP),
-        @Arg(column="status", javaType=Status.class, typeHandler=EnumOrdinalTypeHandler.class, jdbcType=JdbcType.TINYINT),
+        @Arg(column="status", javaType=AdminStatus.class, typeHandler=EnumOrdinalTypeHandler.class, jdbcType=JdbcType.TINYINT),
         @Arg(column="updated", javaType=OffsetDateTime.class, jdbcType=JdbcType.TIMESTAMP),
         @Arg(column="created", javaType=OffsetDateTime.class, jdbcType=JdbcType.TIMESTAMP)
     })
     AdminLogin selectByPrimaryKey(Integer id);
+
+
+    @Select("select * from AdminLogin where id = #{id} and status = #{status}")
+    @ConstructorArgs({
+        @Arg(column="id", javaType=Integer.class, jdbcType=JdbcType.INTEGER, id=true),
+        @Arg(column="password", javaType=String.class, jdbcType=JdbcType.VARCHAR),
+        @Arg(column="phone", javaType=String.class, jdbcType=JdbcType.VARCHAR),
+        @Arg(column="email", javaType=String.class, jdbcType=JdbcType.VARCHAR),
+        @Arg(column="name", javaType=String.class, jdbcType=JdbcType.VARCHAR),
+        @Arg(column="thumbnail", javaType=String.class, jdbcType=JdbcType.VARCHAR),
+        @Arg(column="gender", javaType=Gender.class, typeHandler=EnumOrdinalTypeHandler.class, jdbcType=JdbcType.TINYINT),
+        @Arg(column="birth", javaType=OffsetDateTime.class, jdbcType=JdbcType.TIMESTAMP),
+        @Arg(column="status", javaType=AdminStatus.class, typeHandler=EnumOrdinalTypeHandler.class, jdbcType=JdbcType.TINYINT),
+        @Arg(column="updated", javaType=OffsetDateTime.class, jdbcType=JdbcType.TIMESTAMP),
+        @Arg(column="created", javaType=OffsetDateTime.class, jdbcType=JdbcType.TIMESTAMP)
+    })
+    AdminLogin selectByLoginId(@Param("id") Integer loginId, @Param("status") AdminStatus status);
+
+
+    @Select("select * from AdminLogin where phone = #{phone}")
+    @ConstructorArgs({
+        @Arg(column="id", javaType=Integer.class, jdbcType=JdbcType.INTEGER, id=true),
+        @Arg(column="password", javaType=String.class, jdbcType=JdbcType.VARCHAR),
+        @Arg(column="phone", javaType=String.class, jdbcType=JdbcType.VARCHAR),
+        @Arg(column="email", javaType=String.class, jdbcType=JdbcType.VARCHAR),
+        @Arg(column="name", javaType=String.class, jdbcType=JdbcType.VARCHAR),
+        @Arg(column="thumbnail", javaType=String.class, jdbcType=JdbcType.VARCHAR),
+        @Arg(column="gender", javaType=Gender.class, typeHandler=EnumOrdinalTypeHandler.class, jdbcType=JdbcType.TINYINT),
+        @Arg(column="birth", javaType=OffsetDateTime.class, jdbcType=JdbcType.TIMESTAMP),
+        @Arg(column="status", javaType=AdminStatus.class, typeHandler=EnumOrdinalTypeHandler.class, jdbcType=JdbcType.TINYINT),
+        @Arg(column="updated", javaType=OffsetDateTime.class, jdbcType=JdbcType.TIMESTAMP),
+        @Arg(column="created", javaType=OffsetDateTime.class, jdbcType=JdbcType.TIMESTAMP)
+    })
+    AdminLogin selectByPhone(String phone);
 
     @UpdateProvider(type=AdminLoginSqlProvider.class, method="updateByPrimaryKeySelective")
     int updateByPrimaryKeySelective(AdminLogin record);

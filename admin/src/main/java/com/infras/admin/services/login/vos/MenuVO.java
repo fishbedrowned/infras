@@ -1,4 +1,4 @@
-package com.infras.admin.services.auths.vos;
+package com.infras.admin.services.login.vos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
