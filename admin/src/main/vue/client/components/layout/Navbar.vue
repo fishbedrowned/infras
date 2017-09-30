@@ -27,8 +27,10 @@
 </template>
 
 <script>
+/* global $ */
 import Tooltip from 'vue-bulma-tooltip'
 import { mapGetters, mapActions } from 'vuex'
+import constant from '../../store/constant'
 
 export default {
 
@@ -52,9 +54,20 @@ export default {
     logout () {
       this.$auth.logout({
         redirect: 'Home',
-        makeRequest: false
+        makeRequest: false,
         // params: {},
-        // success: function () {},
+        success: function () {
+          $.ajax({
+            url: constant.addBaseUrl('/logout'),
+            method: 'POST',
+            async: false
+          }).done((res) => {
+            if (res.success) {
+              console.log('ajax logout success!')
+              window.location.reload()
+            }
+          })
+        }
         // error: function () {},
         // etc...
       })

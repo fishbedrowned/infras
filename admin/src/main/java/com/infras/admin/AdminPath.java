@@ -11,5 +11,5 @@ public interface AdminPath {
 
     String LOGOUT = "logout";
 
-    String MENUS = "/menus";
+    String MENUS = "menus";
 }

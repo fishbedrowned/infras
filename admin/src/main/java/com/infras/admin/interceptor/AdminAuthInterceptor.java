@@ -7,15 +7,13 @@ import com.infras.common.result.JsonResult;
 import com.infras.common.tools.AuthUtil;
 import com.infras.common.tools.Utils;
 import com.infras.model.projos.AdminLogin;
-import lombok.extern.log4j.Log4j;
-import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
-import tk.mybatis.mapper.util.StringUtil;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
@@ -67,19 +65,21 @@ public class AdminAuthInterceptor extends HandlerInterceptorAdapter {
         return true;
     }
 
-    private Optional<String> _getSession(HttpServletRequest request) {
+    private Optional<String> _getCookie(HttpServletRequest request) {
+        Cookie[] cookies = request.getCookies();
+        if(cookies == null) return Optional.empty();
         return Arrays.stream(request.getCookies()).filter(c -> Constant.SESSION_KEY.equals(c.getName())).findFirst().map(c -> c.getValue());
     }
 
     private boolean _isValidRequest(HttpServletRequest request, HttpServletResponse response) {
         // 1. 获取token、loginId token=yyMMddHH+加密串
-        Optional<String> admin_session = _getSession(request);
+        Optional<String> admin_session = _getCookie(request);
         Object sessionLoginId = request.getSession().getAttribute("loginId");
         String token;
         Long loginId = -1L;
 
-        if(sessionLoginId != null && Utils.isNumber(sessionLoginId.toString())){
-            return true;
+        if(sessionLoginId == null || !Utils.isNumber(sessionLoginId.toString())){
+            return false;
         }
         if(!admin_session.isPresent()) return false;
         String[] arr = admin_session.get().split("-");
@@ -87,7 +87,7 @@ public class AdminAuthInterceptor extends HandlerInterceptorAdapter {
         token = arr[0];
         if(StringUtils.isNumeric(arr[1])) loginId = Long.parseLong(arr[1]);
 
-        if(loginId < 1) return false;
+        if(loginId < 1 || loginId != Long.parseLong(sessionLoginId.toString())) return false;
 
         Optional<AdminLogin> login = adminLoginServices.getLoginByLoginId(loginId.intValue());
         if(!login.isPresent()) return false;

@@ -67,9 +67,10 @@ export default {
         rememberMe: this.data.rememberMe,
         redirect: {name: redirect ? redirect.from.name : 'Home'},
         success (res) {
-          console.log('Auth Success')
-          console.log('Token: ' + this.$auth.request(req, 'ffefefe'))
+//          console.log('Auth Success')
+//          console.log('Token: ' + this.$auth.request(req, 'ffefefe'))
           // console.log(res)
+          window.location.reload()
         },
         error (err) {
           if (err.response) {

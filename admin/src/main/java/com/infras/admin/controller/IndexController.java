@@ -26,11 +26,4 @@ public class IndexController implements AdminPath {
     public String index(){
         return "index";
     }
-
-    @RequestMapping(path = LOGOUT, method = POST)
-    @CrossOrigin
-    public @ResponseBody JsonResult loginOut(){
-        // TODO
-        return JsonResult.ok();
-    }
 }

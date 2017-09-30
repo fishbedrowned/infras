@@ -1,4 +1,3 @@
-
 package com.infras.model.projos;
 
 import lombok.AllArgsConstructor;
@@ -15,7 +14,11 @@ public class Menus {
 
     private String name;
 
-    private String link;
+    private String path;
+
+    private String component;
+
+    private String icon;
 
     private Integer parent;
 

@@ -8,8 +8,6 @@ Vue.use(Router)
 // test update
 menuModule.updateMenu()
 
-console.info(menuModule.state.items)
-
 export default new Router({
   mode: 'hash', // Demo is living in GitHub.io, so required!
   linkActiveClass: 'is-active',

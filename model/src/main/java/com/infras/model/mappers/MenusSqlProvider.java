@@ -17,8 +17,16 @@ public class MenusSqlProvider {
             sql.VALUES("name", "#{name,jdbcType=VARCHAR}");
         }
         
-        if (record.getLink() != null) {
-            sql.VALUES("link", "#{link,jdbcType=VARCHAR}");
+        if (record.getPath() != null) {
+            sql.VALUES("path", "#{path,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getComponent() != null) {
+            sql.VALUES("component", "#{component,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getIcon() != null) {
+            sql.VALUES("icon", "#{icon,jdbcType=VARCHAR}");
         }
         
         if (record.getParent() != null) {
@@ -48,8 +56,16 @@ public class MenusSqlProvider {
             sql.SET("name = #{name,jdbcType=VARCHAR}");
         }
         
-        if (record.getLink() != null) {
-            sql.SET("link = #{link,jdbcType=VARCHAR}");
+        if (record.getPath() != null) {
+            sql.SET("path = #{path,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getComponent() != null) {
+            sql.SET("component = #{component,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getIcon() != null) {
+            sql.SET("icon = #{icon,jdbcType=VARCHAR}");
         }
         
         if (record.getParent() != null) {

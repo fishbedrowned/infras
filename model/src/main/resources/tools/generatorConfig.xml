@@ -119,35 +119,35 @@
             <!--<property name="useActualColumnNames" value="true"/>-->
             <!--<columnOverride column="CREATED" javaType="java.time.OffsetDateTime"/>-->
         <!--</table>-->
-        <table tableName="AdminLogin"
-               domainObjectName="AdminLogin"
-               enableInsert="true"
-               enableDeleteByPrimaryKey="true"
-               enableSelectByPrimaryKey="true"
-               enableUpdateByPrimaryKey="true"
-               enableCountByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               enableUpdateByExample="false">
-            <columnOverride column="STATUS" javaType="com.infras.model.enums.AdminStatus" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
-            <columnOverride column="GENDER" javaType="com.infras.model.enums.Gender" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>
-            <columnOverride column="CREATED" javaType="java.time.OffsetDateTime"/>
-            <columnOverride column="UPDATED" javaType="java.time.OffsetDateTime"/>
-        </table>
-        <table tableName="Roles"
-               domainObjectName="Roles"
-               enableInsert="true"
-               enableDeleteByPrimaryKey="true"
-               enableSelectByPrimaryKey="true"
-               enableUpdateByPrimaryKey="true"
-               enableCountByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               enableUpdateByExample="false">
-            <property name="useActualColumnNames" value="true"/>
-            <columnOverride column="CREATED" javaType="java.time.OffsetDateTime"/>
-            <columnOverride column="UPDATED" javaType="java.time.OffsetDateTime"/>
-        </table>
+        <!--<table tableName="AdminLogin"-->
+               <!--domainObjectName="AdminLogin"-->
+               <!--enableInsert="true"-->
+               <!--enableDeleteByPrimaryKey="true"-->
+               <!--enableSelectByPrimaryKey="true"-->
+               <!--enableUpdateByPrimaryKey="true"-->
+               <!--enableCountByExample="false"-->
+               <!--enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false">-->
+            <!--<columnOverride column="STATUS" javaType="com.infras.model.enums.AdminStatus" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>-->
+            <!--<columnOverride column="GENDER" javaType="com.infras.model.enums.Gender" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler"/>-->
+            <!--<columnOverride column="CREATED" javaType="java.time.OffsetDateTime"/>-->
+            <!--<columnOverride column="UPDATED" javaType="java.time.OffsetDateTime"/>-->
+        <!--</table>-->
+        <!--<table tableName="Roles"-->
+               <!--domainObjectName="Roles"-->
+               <!--enableInsert="true"-->
+               <!--enableDeleteByPrimaryKey="true"-->
+               <!--enableSelectByPrimaryKey="true"-->
+               <!--enableUpdateByPrimaryKey="true"-->
+               <!--enableCountByExample="false"-->
+               <!--enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false">-->
+            <!--<property name="useActualColumnNames" value="true"/>-->
+            <!--<columnOverride column="CREATED" javaType="java.time.OffsetDateTime"/>-->
+            <!--<columnOverride column="UPDATED" javaType="java.time.OffsetDateTime"/>-->
+        <!--</table>-->
         <table tableName="Menus"
                domainObjectName="Menus"
                enableInsert="true"
@@ -162,34 +162,34 @@
             <columnOverride column="CREATED" javaType="java.time.OffsetDateTime"/>
             <columnOverride column="UPDATED" javaType="java.time.OffsetDateTime"/>
         </table>
-        <table tableName="RoleMenus"
-               domainObjectName="RoleMenus"
-               enableInsert="true"
-               enableDeleteByPrimaryKey="true"
-               enableSelectByPrimaryKey="true"
-               enableUpdateByPrimaryKey="true"
-               enableCountByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               enableUpdateByExample="false">
-            <property name="useActualColumnNames" value="true"/>
-            <columnOverride column="CREATED" javaType="java.time.OffsetDateTime"/>
-            <columnOverride column="UPDATED" javaType="java.time.OffsetDateTime"/>
-        </table>
-        <table tableName="AdminRole"
-               domainObjectName="AdminRole"
-               enableInsert="true"
-               enableDeleteByPrimaryKey="true"
-               enableSelectByPrimaryKey="true"
-               enableUpdateByPrimaryKey="true"
-               enableCountByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               enableUpdateByExample="false">
-            <property name="useActualColumnNames" value="true"/>
-            <columnOverride column="CREATED" javaType="java.time.OffsetDateTime"/>
-            <columnOverride column="UPDATED" javaType="java.time.OffsetDateTime"/>
-        </table>
+        <!--<table tableName="RoleMenus"-->
+               <!--domainObjectName="RoleMenus"-->
+               <!--enableInsert="true"-->
+               <!--enableDeleteByPrimaryKey="true"-->
+               <!--enableSelectByPrimaryKey="true"-->
+               <!--enableUpdateByPrimaryKey="true"-->
+               <!--enableCountByExample="false"-->
+               <!--enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false">-->
+            <!--<property name="useActualColumnNames" value="true"/>-->
+            <!--<columnOverride column="CREATED" javaType="java.time.OffsetDateTime"/>-->
+            <!--<columnOverride column="UPDATED" javaType="java.time.OffsetDateTime"/>-->
+        <!--</table>-->
+        <!--<table tableName="AdminRole"-->
+               <!--domainObjectName="AdminRole"-->
+               <!--enableInsert="true"-->
+               <!--enableDeleteByPrimaryKey="true"-->
+               <!--enableSelectByPrimaryKey="true"-->
+               <!--enableUpdateByPrimaryKey="true"-->
+               <!--enableCountByExample="false"-->
+               <!--enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false">-->
+            <!--<property name="useActualColumnNames" value="true"/>-->
+            <!--<columnOverride column="CREATED" javaType="java.time.OffsetDateTime"/>-->
+            <!--<columnOverride column="UPDATED" javaType="java.time.OffsetDateTime"/>-->
+        <!--</table>-->
         <!--<table tableName="person" domainObjectName="Person"/>-->
         <!--<table tableName="department" domainObjectName="Depart"/>-->
 

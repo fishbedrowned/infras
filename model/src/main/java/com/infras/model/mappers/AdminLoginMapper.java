@@ -3,11 +3,13 @@ package com.infras.model.mappers;
 import com.infras.model.enums.AdminStatus;
 import com.infras.model.enums.Gender;
 import com.infras.model.projos.AdminLogin;
+import com.infras.model.projos.Menus;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.EnumOrdinalTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 
 import java.time.OffsetDateTime;
+import java.util.List;
 
 public interface AdminLoginMapper {
     @Delete({

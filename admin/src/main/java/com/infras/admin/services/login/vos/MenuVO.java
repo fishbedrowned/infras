@@ -1,8 +1,6 @@
 package com.infras.admin.services.login.vos;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +9,9 @@ import java.util.List;
  * Created by zhaoheng on 2017/9/16.
  */
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
+@Setter
 @Builder
 public class MenuVO {
     private String name = "";
