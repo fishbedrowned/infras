@@ -1,4 +1,4 @@
 rootProject.name = 'infras'
 include 'common', 'model', 'services', 'api', 'admin'
-include 'Test'
+include 'web'
 
