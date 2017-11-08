@@ -1,4 +1,4 @@
-package com.infras.configs;
+package com.infras.services.configs;
 
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Method;

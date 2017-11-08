@@ -1,9 +1,7 @@
 package com.infras.api.controller.login;
 
-import com.infras.api.ApiPath;
+import com.infras.api.controller.ApiPath;
 import com.infras.common.result.JsonResult;
-import com.infras.model.enums.PhoneCodeType;
-import com.infras.services.login.checker.LoginChecker;
 import com.infras.services.login.forms.PhoneCodeForm;
 import com.infras.services.login.forms.RegisterForm;
 import com.infras.services.login.services.LoginService;

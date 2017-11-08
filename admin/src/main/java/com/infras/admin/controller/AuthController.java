@@ -1,6 +1,5 @@
 package com.infras.admin.controller;
 
-import com.infras.admin.AdminPath;
 import com.infras.admin.config.Constant;
 import com.infras.admin.services.login.forms.LoginForm;
 import com.infras.admin.services.login.service.AdminLoginServices;
@@ -28,7 +27,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
  */
 @Log4j
 @RestController
-public class AuthController implements AdminPath {
+public class AuthController implements Path {
 
     @Autowired
     private AdminLoginServices loginServices;

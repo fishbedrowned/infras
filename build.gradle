@@ -10,6 +10,7 @@ buildscript {
 		commonLangVersion = '3.6'
 		springLoaded = '1.2.6.RELEASE'
 		springfoxVersion = '2.6.0'
+		mongoVersion = '2.0.0.M3'
 	}
 	repositories {
         jcenter()

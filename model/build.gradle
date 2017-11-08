@@ -8,6 +8,7 @@ jar {
 }
 
 dependencies {
+    compile("org.springframework.boot:spring-boot-starter-data-mongodb:$mongoVersion")
     compile("org.projectlombok:lombok")
     compile('mysql:mysql-connector-java')
     compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:$mybatisVersion")

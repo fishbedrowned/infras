@@ -1,9 +1,9 @@
-package com.infras.admin;
+package com.infras.admin.controller;
 
 /**
  * Created by zhaoheng on 2017/7/13.
  */
-public interface AdminPath {
+public interface Path {
 
     String INDEX = "/";
 

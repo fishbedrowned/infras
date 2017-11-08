@@ -1,4 +1,4 @@
-package com.infras.configs;
+package com.infras.services.configs;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;

@@ -1,4 +1,4 @@
-package com.infras.api;
+package com.infras.api.controller;
 
 import com.infras.common.error.ApiErrors;
 import com.infras.common.error.CommonException;

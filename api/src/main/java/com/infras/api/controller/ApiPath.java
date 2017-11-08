@@ -1,4 +1,4 @@
-package com.infras.api;
+package com.infras.api.controller;
 
 /**
  * Created by zhaoheng on 2017/7/13.

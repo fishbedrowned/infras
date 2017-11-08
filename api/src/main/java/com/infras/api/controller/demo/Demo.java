@@ -1,6 +1,6 @@
 package com.infras.api.controller.demo;
 
-import com.infras.api.ApiPath;
+import com.infras.api.controller.ApiPath;
 import com.infras.api.transfer.DemoTransfer;
 import com.infras.common.result.JsonResult;
 import com.infras.model.demo.Greeting;

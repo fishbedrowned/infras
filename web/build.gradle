@@ -9,6 +9,8 @@ repositories {
 }
 
 dependencies {
+    compile project(':services')
     compile('org.springframework.boot:spring-boot-starter-freemarker')
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('com.mxixm:fastboot-weixin:0.2.1.beta')
 }
